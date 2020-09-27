@@ -1,0 +1,36 @@
+--DataBase creation--
+-- CREATE DATABASE "authorization"
+--     WITH
+--     OWNER = postgres
+--     ENCODING = 'UTF8'
+--     LC_COLLATE = 'English_United States.1252'
+--     LC_CTYPE = 'English_United States.1252'
+--     TABLESPACE = pg_default
+--     CONNECTION LIMIT = -1;
+
+
+--Table user creation--
+create table users
+(
+    id       bigserial
+        constraint users_pkey
+            primary key,
+    email    varchar(50)
+        constraint UNIQUE_KEY_1
+            unique,
+    name     varchar(50),
+    password varchar(100),
+    username varchar(50)
+        constraint UNIQUE_KEY_2
+            unique
+);
+
+
+--Table user_roles creation--
+create table user_roles
+(
+    user_id bigserial
+        constraint FK_ID
+            references users,
+    roles   varchar(255)
+);
