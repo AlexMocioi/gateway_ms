@@ -50,8 +50,8 @@ public class BaseControllerTest {
 
         User user = new User();
         user.setName("Adam");
-        user.setEmail("adam@tgs.com");
-        user.setUsername("adamtgs");
+        user.setEmail("adam@hil.com");
+        user.setUsername("adamhil");
         user.setPassword(passwordEncoder.encode("123456"));
         user.getRoles().add(RoleName.ADMIN);
 
